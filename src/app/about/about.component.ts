@@ -1,43 +1,13 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {
-  concat,
-  fromEvent,
-  interval,
-  noop,
-  observable,
-  Observable,
-  of,
-  timer,
-  merge,
-  Subject,
-  BehaviorSubject,
-  AsyncSubject,
-  ReplaySubject, from
-} from 'rxjs';
-import {delayWhen, filter, map, take, timeout} from 'rxjs/operators';
-
-
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-    selector: 'about',
-    templateUrl: './about.component.html',
-    styleUrls: ['./about.component.css']
+  selector: 'about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AboutComponent implements OnInit {
-
-    ngOnInit() {
-
-
-    }
-
-
-  run() {
-
-
-
-  }
-
-
+export class AboutComponent {
+  run() {}
 }
 
 

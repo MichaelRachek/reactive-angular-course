@@ -1,8 +1,7 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
-import {Course} from '../model/course';
-import {Observable} from 'rxjs';
-import {CoursesStore} from '../services/courses.store';
-
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Course } from '../model/course';
+import { Observable } from 'rxjs';
+import { CoursesStore } from '../services/courses.store';
 
 @Component({
   selector: 'home',
@@ -11,26 +10,19 @@ import {CoursesStore} from '../services/courses.store';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
-
   beginnerCourses$: Observable<Course[]>;
-
   advancedCourses$: Observable<Course[]>;
-
   constructor(private coursesStore: CoursesStore) {
-
   }
 
   ngOnInit() {
-      this.reloadCourses();
+    this.reloadCourses();
   }
 
   reloadCourses() {
-
-      this.beginnerCourses$ = this.coursesStore.filterByCategory("BEGINNER");
-
-      this.advancedCourses$ = this.coursesStore.filterByCategory("ADVANCED");
+    this.beginnerCourses$ = this.coursesStore.filterByCategory('BEGINNER');
+    this.advancedCourses$ = this.coursesStore.filterByCategory('ADVANCED');
   }
-
 }
 
 
